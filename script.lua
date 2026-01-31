@@ -14,6 +14,12 @@ local ImageButton = Instance.new("ImageButton", ScreenGui)
 ImageButton.Size = UDim2.new(0,60,0,60)
 ImageButton.Position = UDim2.new(0.893,0,0.464,0)
 ImageButton.Image = "rbxassetid://91356972133906"
+ImageButton.Visible = false
+
+local ContentProvider = game:GetService("ContentProvider")
+ContentProvider:PreloadAsync({ImageButton}, function()
+    ImageButton.Visible = true 
+end)
 
 local UiCorner1 = Instance.new("UICorner", ImageButton)
 
